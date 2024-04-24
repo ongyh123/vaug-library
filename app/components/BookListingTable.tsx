@@ -4,7 +4,6 @@ import { Button } from "./Button";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -32,7 +31,6 @@ const BookListingTable: React.FC<BookListingTableProps> = ({ books }) => {
 
   return (
     <Table className="w-full overflow-x-auto">
-      <TableCaption>Books</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead>Title</TableHead>
@@ -61,7 +59,7 @@ const BookListingTable: React.FC<BookListingTableProps> = ({ books }) => {
               <Button
                 variant="link"
                 size="text"
-                onClick={() => router.push(`/${book.id}`)}
+                onClick={() => router.push(`/book/${book.id}`)}
               >
                 View
               </Button>

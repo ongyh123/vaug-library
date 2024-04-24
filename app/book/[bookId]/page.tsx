@@ -2,18 +2,10 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Container from "../components/Container";
+import Container from "../../components/Container";
 import { useParams } from "next/navigation";
-import { Book } from "../components/BookListingTable";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../components/Table";
+import { Book } from "../../components/BookListingTable";
+import { Table, TableCell, TableRow } from "../../components/Table";
 import Image from "next/image";
 
 interface BookData {
@@ -46,8 +38,6 @@ export default function BookDetails() {
   if (!book) {
     return null;
   }
-
-  console.log(book.image);
 
   return (
     <Container>

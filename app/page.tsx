@@ -1,31 +1,15 @@
 "use client";
 
-import BookListingTable from "./components/BookListingTable";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { Button } from "./components/Button";
 import Container from "./components/Container";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [books, setBooks] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get("https://fakerapi.it/api/v1/books")
-      .then((response) => {
-        setBooks(response.data.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  const router = useRouter();
 
   return (
     <Container>
-      {books && (
-        <div className="relative w-full overflow-x-auto">
-          <BookListingTable books={books} />
-        </div>
-      )}
+      <Button onClick={() => router.push("/book")}>Go to Book Page</Button>
     </Container>
   );
 }
